@@ -20,7 +20,7 @@ public class LoginTest {
 		return new Object[][] {
 			{"pop2020@test.com", "123456"},
 			{"thuy140583@gmail.com", "Thuyvy12"},
-			{"datadriver@test.com", "123456"}
+			{"datadriven@test.com", "123456"}
 		};
 		
 	}
