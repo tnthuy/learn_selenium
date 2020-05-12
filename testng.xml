@@ -5,6 +5,7 @@
   <test name="Regression" >
     <classes>
        <class name="test.LoginTest" />
+       <class name="testng.NewTest"></class>
     </classes>
   </test>
  
