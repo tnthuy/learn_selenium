@@ -11,7 +11,7 @@ public class TestFirst {
   WebDriver driver;
 	@Test
   public void openSite() {
-		System.setProperty("webdriver.chrome.driver", "F://Setup//chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E://Setup//chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.get("https://www.seleniumeasy.com/test/");
 		driver.manage().window().maximize();
