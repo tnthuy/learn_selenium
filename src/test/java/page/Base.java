@@ -1,4 +1,4 @@
-package com.pop.page;
+package page;
 
 import java.util.NoSuchElementException;
 

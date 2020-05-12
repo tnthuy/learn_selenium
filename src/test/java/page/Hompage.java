@@ -1,4 +1,4 @@
-package com.pop.page;
+package page;
 
 import java.sql.Driver;
 
@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 public class Hompage extends Base{
 //Declare all objects on pages
 	public By BTN_SIGNIN=By.linkText("Sign in");
-	public By LNK-BESTSELLER =By.xpath("//*[@id=\"home-page-tabs\"]/li[2]/a");
+	public By LNK_BESTSELLER =By.xpath("//*[@id=\"home-page-tabs\"]/li[2]/a");
 	
 	//Constructor
 	public Hompage(WebDriver driver) {
