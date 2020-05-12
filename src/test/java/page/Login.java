@@ -12,9 +12,9 @@ public class Login extends Base {
 		this.driver=driver;
 	}
 	
-	public MyAccount login() {
-		driver.findElement(TXT_EMAIL).sendKeys("thuy140583@gmail.com");
-				driver.findElement(TXT_PASSWORD).sendKeys("Thuyvy12");
+	public MyAccount login(String username, String password) {
+		driver.findElement(TXT_EMAIL).sendKeys(username);
+				driver.findElement(TXT_PASSWORD).sendKeys(password);
 				driver.findElement(BTN_SIGNIN).click();
 				return new MyAccount(driver);
 	}
