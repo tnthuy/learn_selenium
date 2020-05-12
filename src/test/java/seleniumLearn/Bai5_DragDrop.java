@@ -12,28 +12,41 @@ public class Bai5_DragDrop {
 	WebDriver driver;
 	WebElement bankDrag;
 	WebElement salesDrag;
+	WebElement bankDrop;
+	WebElement salesDrop;
+	WebElement moneyDrag1;
+	WebElement moneyDrop1;
+	WebElement moneyDrag2;
+	WebElement moneyDrop2;
 	@Test
 	public void testKeyboard() throws InterruptedException {
 
-//Mo trang guruDemo
+		//Mo trang guruDemo
 		driver.get("http://demo.guru99.com/test/drag_drop.html");
 		//Drag and drop bank
-		bankDrag= driver.findElement(By.xpath("//*[@id=\"credit2\"]"));
-		salesDrag=driver.findElement(By.xpath("//*[@id=\"credit1\"]"));
-		bankDrag.
-		int x=itemDrop.getLocation().getX();
-		int y=itemDrop.getLocation().getY();
-		System.out.println(x);
-		System.out.println(y);
+		bankDrag= driver.findElement(By.xpath("//*[@id=\"credit2\"]/a"));
+		salesDrag=driver.findElement(By.xpath("//*[@id=\"credit1\"]/a"));
+		moneyDrag1= driver.findElement(By.xpath("//*[@id=\"fourth\"]/a"));
+		moneyDrag2= driver.findElement(By.xpath("//*[@id=\"fourth\"]/a"));
+		//Element to which need to drop
+		bankDrop = driver.findElement(By.xpath("//*[@id=\"bank\"]/li"));
+		salesDrop =driver.findElement(By.xpath("//*[@id=\"loan\"]/li"));
+		moneyDrop1 =driver.findElement(By.xpath("//*[@id=\"amt7\"]/li"));
+		moneyDrop2 =driver.findElement(By.xpath("//*[@id=\"amt8\"]/li"));
+
 
 		//Using Action class for drag and drop.		
 		Actions act=new Actions(driver);
 
 		//Dragged and dropped.		
-		act.dragAndDrop(itemDrag, itemDrop).perform();
-		//act.dragAndDropBy(itemDrag, 221, 64).build().perform();
+		act.dragAndDrop(bankDrag, bankDrop).build().perform();
+		act.dragAndDrop(salesDrag, salesDrop).build().perform();
+		act.dragAndDrop(moneyDrag1, moneyDrop1).build().perform();
+		act.dragAndDrop(moneyDrag2, moneyDrop2).build().perform();
 
-		if(driver.findElement(By.xpath("//*[@id=\"droppedlist\"]/span")).isDisplayed())							
+		String outMessage=driver.findElement(By.xpath("//*[@id=\"equal\"]/a")).getText();
+		String message= "Perfect!";
+		if(driver.findElement(By.xpath("//*[@id=\"equal\"]/a")).isDisplayed())							
 		{		
 			System.out.println("Displayed !!!");					
 		}
@@ -42,19 +55,21 @@ public class Bai5_DragDrop {
 			System.out.println("Not Displayed !!!");					
 		}
 
+		Thread.sleep(3000);
 
+		assertEquals(outMessage,message,"Expected output"+message+ "but actual output is"+outMessage);
+		Thread.sleep(3000);
 	}
 	@BeforeMethod
 	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver", "E://Setup/chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F://Setup/chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-		driver.close();
+		//driver.close();
 
 	}
 
-}
