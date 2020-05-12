@@ -36,7 +36,7 @@ public class LoginTest {
 
 	@AfterMethod
 	public void afterMethod() {
-		//driver.close();
+		driver.close();
 	}
 
 }
