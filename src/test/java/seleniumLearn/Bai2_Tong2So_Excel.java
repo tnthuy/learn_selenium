@@ -82,21 +82,21 @@ public class Bai2_Tong2So_Excel {
 	
 	return cells;
 }
-
-
-		//Tao mot doi tuong cua lop File de mo xlsx file
-		File file= new File(filePath+"\\+")
-
-				//Mo trinh duyet
-				driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
-		//tim va dien gia tri a
-		driver.findElement(By.xpath("//*[@id=\"sum1\"]")).sendKeys(String.valueOf(a));
-		//tim va dien gia tri b
-		driver.findElement(By.xpath("//*[@id=\"sum2\"]")).sendKeys(String.valueOf(b));
-		//Click to tinh kq
-		driver.findElement(By.xpath("//*[@id=\"gettotal\"]/button")).click();
-
-	}
+//	
+//
+//		//Tao mot doi tuong cua lop File de mo xlsx file
+//		File file= new File(filePath+"\\+")
+//
+//				//Mo trinh duyet
+//				driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
+//		//tim va dien gia tri a
+//		driver.findElement(By.xpath("//*[@id=\"sum1\"]")).sendKeys(String.valueOf(a));
+//		//tim va dien gia tri b
+//		driver.findElement(By.xpath("//*[@id=\"sum2\"]")).sendKeys(String.valueOf(b));
+//		//Click to tinh kq
+//		driver.findElement(By.xpath("//*[@id=\"gettotal\"]/button")).click();
+//
+//	}
 	@BeforeMethod
 	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver", "F://Setup//chromedriver_win32/chromedriver.exe");

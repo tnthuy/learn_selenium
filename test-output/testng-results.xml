@@ -1,62 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-05-05T00:35:45Z" name="Default suite" finished-at="2020-05-05T00:35:52Z" duration-ms="7250">
+  <suite started-at="2020-05-13T05:45:55Z" name="Parallel Test Suite" finished-at="2020-05-13T05:46:24Z" duration-ms="29914">
     <groups>
     </groups>
-    <test started-at="2020-05-05T00:35:45Z" name="Default test" finished-at="2020-05-05T00:35:52Z" duration-ms="7250">
-      <class name="seleniumLearn.TF_Bai2_GetNewUser">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:seleniumLearn.TF_Bai2_GetNewUser@212bf671]" started-at="2020-05-05T07:35:45Z" name="beforeMethod" finished-at="2020-05-05T07:35:51Z" duration-ms="5968" status="PASS">
+    <test started-at="2020-05-13T05:45:55Z" name="Firefox Test" finished-at="2020-05-13T05:45:55Z" duration-ms="73">
+      <class name="testng.NewTest">
+        <test-method signature="tc05()[pri:1, instance:testng.NewTest@6253c26]" started-at="2020-05-13T12:45:55Z" name="tc05" finished-at="2020-05-13T12:45:55Z" duration-ms="26" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="Bai3_testAlert()[pri:0, instance:seleniumLearn.TF_Bai2_GetNewUser@212bf671]" started-at="2020-05-05T07:35:51Z" name="Bai3_testAlert" finished-at="2020-05-05T07:35:52Z" duration-ms="1119" status="FAIL">
-          <exception class="org.openqa.selenium.InvalidSelectorException">
+        </test-method> <!-- tc05 -->
+        <test-method signature="tc04()[pri:2, instance:testng.NewTest@6253c26]" started-at="2020-05-13T12:45:55Z" name="tc04" finished-at="2020-05-13T12:45:55Z" duration-ms="2" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[invalid selector: Unable to locate an element with the xpath expression ///*[@class='btn btn-warning'] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '///*[@class='btn btn-warning']' is not a valid XPath expression.
-  (Session info: chrome=81.0.4044.129)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-EFDA5O8', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\thuy\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61602}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: cd35aeb3ca677fecbe00caaa59e7dde9
-*** Element info: {Using=xpath, value=///*[@class='btn btn-warning']}]]>
+              <![CDATA[testcase fail]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression ///*[@class='btn btn-warning'] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '///*[@class='btn btn-warning']' is not a valid XPath expression.
-  (Session info: chrome=81.0.4044.129)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-EFDA5O8', ip: '192.168.1.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.129, chrome: {chromedriverVersion: 81.0.4044.69 (6813546031a4b..., userDataDir: C:\Users\thuy\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:61602}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: cd35aeb3ca677fecbe00caaa59e7dde9
-*** Element info: {Using=xpath, value=///*[@class='btn btn-warning']}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at seleniumLearn.TF_Bai2_GetNewUser.isElementPresent(TF_Bai2_GetNewUser.java:28)
-	at seleniumLearn.TF_Bai2_GetNewUser.Bai3_testAlert(TF_Bai2_GetNewUser.java:66)
+              <![CDATA[java.lang.AssertionError: testcase fail
+	at testng.NewTest.tc04(NewTest.java:27)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
@@ -66,29 +32,67 @@ Session ID: cd35aeb3ca677fecbe00caaa59e7dde9
 	at org.testng.TestRunner.privateRun(TestRunner.java:756)
 	at org.testng.TestRunner.run(TestRunner.java:610)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:421)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:830)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Bai3_testAlert -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:seleniumLearn.TF_Bai2_GetNewUser@212bf671]" started-at="2020-05-05T07:35:52Z" name="afterMethod" finished-at="2020-05-05T07:35:52Z" duration-ms="136" status="PASS">
+        </test-method> <!-- tc04 -->
+        <test-method signature="tc03()[pri:3, instance:testng.NewTest@6253c26]" started-at="2020-05-13T12:45:55Z" name="tc03" finished-at="2020-05-13T12:45:55Z" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc03 -->
+        <test-method signature="tc02()[pri:4, instance:testng.NewTest@6253c26]" started-at="2020-05-13T12:45:55Z" name="tc02" finished-at="2020-05-13T12:45:55Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc02 -->
+        <test-method signature="tc01()[pri:5, instance:testng.NewTest@6253c26]" started-at="2020-05-13T12:45:55Z" name="tc01" finished-at="2020-05-13T12:45:55Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc01 -->
+      </class> <!-- testng.NewTest -->
+    </test> <!-- Firefox Test -->
+    <test started-at="2020-05-13T05:45:55Z" name="Chrome Test" finished-at="2020-05-13T05:46:24Z" duration-ms="29914">
+      <class name="test.ParallelTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:test.ParallelTest@c88a337]" started-at="2020-05-13T12:45:55Z" name="beforeMethod" finished-at="2020-05-13T12:46:17Z" duration-ms="21969" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testLogin(java.lang.String, java.lang.String)[pri:0, instance:test.ParallelTest@c88a337]" started-at="2020-05-13T12:46:17Z" name="testLogin" data-provider="dataSet" finished-at="2020-05-13T12:46:24Z" duration-ms="7591" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[datadriven@test.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.ParallelTest@c88a337]" started-at="2020-05-13T12:46:24Z" name="afterMethod" finished-at="2020-05-13T12:46:24Z" duration-ms="331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- seleniumLearn.TF_Bai2_GetNewUser -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- test.ParallelTest -->
+    </test> <!-- Chrome Test -->
+  </suite> <!-- Parallel Test Suite -->
 </testng-results>

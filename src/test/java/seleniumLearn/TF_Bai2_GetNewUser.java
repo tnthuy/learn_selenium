@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
-
+import seleniumLearn.Helper;
 
 public class TF_Bai2_GetNewUser {
 	WebDriver driver;
