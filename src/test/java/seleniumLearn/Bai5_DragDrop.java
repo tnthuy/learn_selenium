@@ -1,4 +1,6 @@
 package seleniumLearn;
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -62,14 +64,15 @@ public class Bai5_DragDrop {
 	}
 	@BeforeMethod
 	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver", "F://Setup/chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E://Setup/chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 	}
 
 	@AfterMethod
 	public void afterMethod() {
-		//driver.close();
+		driver.close();
 
 	}
+}
 
