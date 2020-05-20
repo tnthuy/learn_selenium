@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Parallel Test Suite]" guice-stage="DEVELOPMENT">
-  <test parallel="tests" name="Firefox Test(failed)">
-    <parameter name="browser" value="Firefox"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
     <classes>
-      <class name="testng.NewTest">
+      <class name="seleniumLearn.Bai2_Tong2So_CSV">
         <methods>
-          <include name="tc04"/>
-        </methods>
-      </class> <!-- testng.NewTest -->
-      <class name="test.ParallelTest">
-        <methods>
+          <include name="ReadCSVFile"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- test.ParallelTest -->
+      </class> <!-- seleniumLearn.Bai2_Tong2So_CSV -->
     </classes>
-  </test> <!-- Firefox Test(failed) -->
-</suite> <!-- Failed suite [Parallel Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

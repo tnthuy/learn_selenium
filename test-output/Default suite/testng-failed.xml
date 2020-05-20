@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="seleniumLearn.TF_Bai2_GetNewUser">
+      <class name="seleniumLearn.Bai2_Tong2So_CSV">
         <methods>
-          <include name="afterMethod"/>
+          <include name="ReadCSVFile"/>
           <include name="beforeMethod"/>
-          <include name="Bai3_testAlert"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- seleniumLearn.TF_Bai2_GetNewUser -->
+      </class> <!-- seleniumLearn.Bai2_Tong2So_CSV -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

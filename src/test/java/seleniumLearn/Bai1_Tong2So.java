@@ -40,7 +40,7 @@ public class Bai1_Tong2So {
   }
   @BeforeMethod
   public void beforeMethod() {
-	  System.setProperty("webdriver.chrome.driver", "F://Setup//chromedriver_win32/chromedriver.exe");
+	  System.setProperty("webdriver.chrome.driver", "C://Setup//chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
   }
