@@ -29,7 +29,7 @@ public class Bai2_Tong2So_CSV {
 		WebElement btKQ = driver.findElement(By.xpath("//*[@id=\"gettotal\"]/button"));
 		
 		//Doc file
-		CSVReader reader=new CSVReader(new FileReader("C:\\Users\\thuy\\eclipse-workspace\\seleniumLearn\\src\\test\\java\\data\\ExportExcelCSV.csv"));
+		CSVReader reader=new CSVReader(new FileReader("C:\\Users\\thuytn\\git\\learn_selenium\\src\\test\\java\\data\\ExportExcelCSV.csv"));
 		List<String[]> list=reader.readAll();
 		System.out.println("Total rows which we have is "+ list.size());
 
@@ -82,7 +82,7 @@ public class Bai2_Tong2So_CSV {
 	}
 	@BeforeMethod
 	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver", "F://Setup//chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C://Setup//chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 	}

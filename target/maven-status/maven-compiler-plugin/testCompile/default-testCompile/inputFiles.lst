@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\thuytn\git\learn_selenium\src\test\java\testng\NewTest.java
 C:\Users\thuytn\git\learn_selenium\src\test\java\page\Base.java
 C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai5_DragDrop.java
@@ -16,3 +17,24 @@ C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\TF_Bai2_GetNewUse
 C:\Users\thuytn\git\learn_selenium\src\test\java\test\ParallelTest.java
 C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai1_Tong2So.java
 C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai3_MaleAndGroupAge.java
+=======
+C:\Users\thuytn\git\learn_selenium\src\test\java\testng\NewTest.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\page\Base.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai5_DragDrop.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai4_MaleAndGroupAge2_CSV.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\page\Login.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai2_Tong2So_Excel.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\page\KiemTraEmail.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Helper.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\test\LoginTest.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\page\Hompage.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\page\MyAccount.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\TF_Bai1_Wait.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai2_Tong2So_CSV.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai6_Table.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\TestFirst.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\TF_Bai2_GetNewUser.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\test\ParallelTest.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai1_Tong2So.java
+C:\Users\thuytn\git\learn_selenium\src\test\java\seleniumLearn\Bai3_MaleAndGroupAge.java
+>>>>>>> 073385d978e37e17b5b6f1e1e2ab69131122a1a3
