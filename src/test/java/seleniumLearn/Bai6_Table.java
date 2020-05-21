@@ -10,23 +10,20 @@ import org.testng.annotations.Test;
 
 public class Bai6_Table {
 	WebDriver driver;
-	WebElement bankDrag;
-	WebElement salesDrag;
+	WebElement col=driver.findElement(By.xpath("//*[@id=\"example\"]/thead/tr/th[1]"));
 	@Test
-	public void testKeyboard() throws InterruptedException {
+	public void testFindLondon() {
 
 		//Mo trang guruDemo
-		driver.get("http://demo.guru99.com/test/drag_drop.html");
-		//Drag and drop bank
-		bankDrag= driver.findElement(By.xpath("//*[@id=\"credit2\"]"));
-		salesDrag=driver.findElement(By.xpath("//*[@id=\"credit1\"]"));
+		driver.get("https://www.seleniumeasy.com/test/table-sort-search-demo.html");
+		System.out.println(col.getSize());
 		
 
 
 	}
 	@BeforeMethod
 	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver", "E://Setup/chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C://Setup/chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 	}
