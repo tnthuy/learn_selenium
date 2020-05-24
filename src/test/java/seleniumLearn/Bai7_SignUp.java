@@ -58,7 +58,7 @@ public class Bai7_SignUp {
 	}
 	public void SignUpEmail() throws Exception {
 		driver.findElement(By.id("id_gender1")).click();
-		driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).sendKeys("Ngoc Thuy");
+		driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).sendKeys("Ngoc");
 		driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).sendKeys("Tran");
 		driver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("Thuyvy12");
 		driver.findElement(By.xpath("//*[@id=\"days\"]")).sendKeys("3");
@@ -72,12 +72,14 @@ public class Bai7_SignUp {
 		driver.findElement(By.xpath("//*[@id=\"city\"]")).sendKeys("Ha Noi");
 		Select dropdown= new Select(driver.findElement(By.xpath("//*[@id=\"id_state\"]")));
 		dropdown.selectByIndex(3);
-		driver.findElement(By.className("required postcode form-group")).sendKeys("084");
-		System.out.println("kkkk");
+		driver.findElement(By.id("postcode")).sendKeys("00000");
 		Select dropdownCountry=new Select(driver.findElement(By.xpath("//*[@id=\"id_country\"]")));
-		dropdownCountry.selectByValue("United States");
-		driver.findElement(By.xpath("//*[@id=\"phone_mobile\"]")).sendKeys("123456");
-		driver.findElement(By.xpath("//*[@id=\"alias\"]")).sendKeys("Nguyen Co Thach");
+		//dropdownCountry.selectByValue("United States");
+		dropdown.selectByIndex(21);
+		System.out.println("112222");
+		driver.findElement(By.id("authentication")).sendKeys("1234");
+		driver.findElement(By.id("phone_mobile")).sendKeys("123456");
+		driver.findElement(By.id("alias")).sendKeys("Nguyen Co Thach");
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id=\"submitAccount\"]")).click();
 		
