@@ -1,33 +1,14 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="seleniumLearn.Bai6_TableLondon">
+      <class name="seleniumLearn.Bai9_Date">
         <methods>
-          <include name="afterMethod"/>
           <include name="beforeMethod"/>
-          <include name="TestTable"/>
+          <include name="datePicker"/>
         </methods>
-      </class> <!-- seleniumLearn.Bai6_TableLondon -->
+      </class> <!-- seleniumLearn.Bai9_Date -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test name="Default test(failed)">
-    <classes>
-      <class name="seleniumLearn.Bai2_Tong2So_CSV">
-        <methods>
-          <include name="ReadCSVFile"/>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-        </methods>
-      </class> <!-- seleniumLearn.Bai2_Tong2So_CSV -->
-    </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
->>>>>>> 073385d978e37e17b5b6f1e1e2ab69131122a1a3
