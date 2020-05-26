@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="seleniumLearn.Bai9_Date">
+      <class name="seleniumLearn.TF_Bai4_Download">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="datePicker"/>
+          <include name="Bai4_TestDownload"/>
         </methods>
-      </class> <!-- seleniumLearn.Bai9_Date -->
+      </class> <!-- seleniumLearn.TF_Bai4_Download -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
