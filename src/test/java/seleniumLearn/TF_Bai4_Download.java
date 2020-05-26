@@ -16,11 +16,11 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-<<<<<<< HEAD
+
 import org.openqa.selenium.support.ui.WebDriverWait;
-=======
+
 import org.testng.internal.Utils;
->>>>>>> d4034b18229e53a62495c708946b656ec005bea0
+
 
 public class TF_Bai4_Download {
 	WebDriver driver;
@@ -39,7 +39,7 @@ public class TF_Bai4_Download {
 		System.out.println("Check download showing");
 		WebElement Download=driver.findElement(By.xpath("//*[@id=\"cricle-btn\"]"));
 		Download.click();
-<<<<<<< HEAD
+
 		//Utils.pause(2000);
 		Helper.printCurrentTime();
 		
@@ -58,25 +58,12 @@ public class TF_Bai4_Download {
 		 * 
 		 * Helper.printCurrentTime();
 		 */
-	}
-	@BeforeMethod
-	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver", "E://Setup//chromedriver_win32/chromedriver.exe");
-=======
-		Helper.printCurrentTime();
-		By percentage=By.xpath("//*[@class='percenttext']");
-		String text;
-		do {
-			 text=driver.findElement(percentage).getText(); System.out.println(text);}
-		while (text=="100");
-			
-		System.out.println("100%");		
 		
 	}
 	@BeforeMethod
 	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver", "C://Setup//chromedriver_win32/chromedriver.exe");
->>>>>>> d4034b18229e53a62495c708946b656ec005bea0
+
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 	}
