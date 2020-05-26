@@ -8,12 +8,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.internal.Utils;
 
-public class TF_Bai4_Download {
+public class TF_Bai5_DownloadSwitchPage {
 	WebDriver driver;
 	public boolean isElementPresent (By by) {
 		try {
@@ -24,20 +25,11 @@ public class TF_Bai4_Download {
 		}
 	}
 	@Test
-	public void Bai4_TestDownload(FluentWait<WebDriver> wait) throws InterruptedException  {
+	public void Bai5_TestDownload() {
 		//WebDriverWait wait= new WebDriverWait(driver, 10);
-		driver.get("https://www.seleniumeasy.com/test/bootstrap-download-progress-demo.html");
-		System.out.println("Check download showing");
-		WebElement Download=driver.findElement(By.xpath("//*[@id=\"cricle-btn\"]"));
-		Download.click();
-		Helper.printCurrentTime();
-		By percentage=By.xpath("//*[@class='percenttext']");
-		String text;
-		do {
-			 text=driver.findElement(percentage).getText(); System.out.println(text);}
-		while (text=="100");
-			
-		System.out.println("100%");		
+		driver.get("https://www.seleniumeasy.com/test/");
+		Select Alert=new Select(driver.findElement(By.xpath("//*[contains(text(),'Alerts & Modals')]")));
+		Alert.selectByValue("File Download");
 		
 	}
 	@BeforeMethod
@@ -49,7 +41,7 @@ public class TF_Bai4_Download {
 
 	@AfterMethod
 	public void afterMethod() {
-		driver.close();
+		//driver.close();
 
 	}
 
