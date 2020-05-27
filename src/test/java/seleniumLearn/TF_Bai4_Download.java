@@ -1,10 +1,10 @@
 package seleniumLearn;
 
-<<<<<<< HEAD
+
 import static org.testng.Assert.fail;
 
-=======
->>>>>>> d4034b18229e53a62495c708946b656ec005bea0
+
+
 import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
