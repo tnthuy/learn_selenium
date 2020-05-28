@@ -1,7 +1,10 @@
+
 <<<<<<< HEAD
-<<<<<<< HEAD
+=======
+
 package page;
 
+>>>>>>> 39bd566108074e047c94325de80270cadb42a48c
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -10,6 +13,9 @@ public class CreateAccount extends Base {
 public CreateAccount(WebDriver driver) {
 	this.driver=driver;
 }
-  public Confirm createAccount(String email) {
-  }
+  
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 39bd566108074e047c94325de80270cadb42a48c

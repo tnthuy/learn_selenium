@@ -15,12 +15,16 @@ public class Login extends Base {
 	public By BTN_SIGNIN=By.xpath("//*[@id=\"SubmitLogin\"]/span");
 
 	public By BTN_CREATE_ACCOUNT=By.xpath("//*[@id=\"SubmitCreate\"]/span");
+
+	
+
 	public By MS_INVALID_EMAIL=By.xpath("//*[@id=\"create_account_error\"]/ol/li");
+
 
 	public By tXT_EMAILCREATE=By.id("email_create");
 	public By MSG_INVALIDEMAIL=By.xpath("//*[@id=\"create_account_error\"]");
-	public By BTN_CREATEACCOUNT=By.xpath("//*[@id=\"SubmitCreate\"]/span");
 	
+
 
 
 
@@ -38,8 +42,8 @@ public class Login extends Base {
 	public CreateAccount login(String email) {
 		driver.findElement(TXT_EMAIL_CREATE).sendKeys(email);
 		driver.findElement(BTN_CREATE_ACCOUNT).click();
-		String invalidMsg=driver.findElement(MS_INVALID_EMAIL).getText();
-		if (driver.findElement(MS_INVALID_EMAIL).isDisplayed())
+		String invalidMsg=driver.findElement(MSG_INVALIDEMAIL).getText();
+		if (driver.findElement(MSG_INVALIDEMAIL).isDisplayed())
 		{
 			Assert.assertEquals(invalidMsg, "Invalid email address.");
 			return null;
@@ -55,7 +59,7 @@ public class Login extends Base {
 	
 	public CreateAccount signUp(String email) {
 		driver.findElement(tXT_EMAILCREATE).sendKeys(email);
-		driver.findElement(BTN_CREATEACCOUNT).click();
+		driver.findElement(BTN_CREATE_ACCOUNT).click();
 		WebElement messageError=driver.findElement(MSG_INVALIDEMAIL);
 		if (messageError.isDisplayed()) {
 			System.out.println("Email fail");

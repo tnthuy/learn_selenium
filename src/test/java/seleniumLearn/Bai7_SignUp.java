@@ -81,9 +81,9 @@ public class Bai7_SignUp {
 	public By BTN_CREATE_ACCOUNT=By.xpath("//*[@id=\"SubmitCreate\"]/span");
 	public By BTN_SIGNIN=By.linkText("Sign in");
 	public By tXT_EMAIL_CREATE=By.id("email_create");
-	public By MSG_INVALIDEMAIL=By.xpath("//*[@id=\"create_account_error\"]/ol");
+	public By MSG_INVALIDEMAIL=By.xpath("//*[@id=\"create_account_error\"]");
 	public String emailInValid="abc123";
-	public String emailvalid="abc123@gmail.com";
+	public String emailvalid="abc12365@gmail.com";
 
 	@Test
 	public void SignUp() throws Exception {
@@ -97,27 +97,30 @@ public class Bai7_SignUp {
 		driver.findElement(tXT_EMAIL_CREATE).sendKeys(emailInValid);
 		
 		driver.findElement(BTN_CREATE_ACCOUNT).click();
+		
+		Thread.sleep(5000);
 		String invalidMsg=driver.findElement(MSG_INVALIDEMAIL).getText();
+		
 		if (driver.findElement(MSG_INVALIDEMAIL).isDisplayed())
 		{
 			Assert.assertEquals(invalidMsg, "Invalid email address.");
 			
-			System.out.println("dâfsf");
+			
 		};
-		Thread.sleep(2000);
+		
 
 		//Nhap lai dung email	
 		driver.findElement(tXT_EMAIL_CREATE).clear();
 		driver.findElement(tXT_EMAIL_CREATE).sendKeys(emailvalid);
 		driver.findElement(BTN_CREATE_ACCOUNT).click();
 		System.out.println("nhap dung email ");
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		SignUpEmail();
 
 	}
-	public void SignUpEmail() {
-		driver.findElement(By.xpath("//*[@id=\"id_gender2\"]")).click();
-		driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).sendKeys("Ngoc Thuy");
+	public void SignUpEmail() throws Exception {
+		driver.findElement(By.id("id_gender1")).click();
+		driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).sendKeys("Ngoc");
 		driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).sendKeys("Tran");
 		driver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("Thuyvy12");
 		driver.findElement(By.xpath("//*[@id=\"days\"]")).sendKeys("3");
@@ -131,11 +134,15 @@ public class Bai7_SignUp {
 		driver.findElement(By.xpath("//*[@id=\"city\"]")).sendKeys("Ha Noi");
 		Select dropdown= new Select(driver.findElement(By.xpath("//*[@id=\"id_state\"]")));
 		dropdown.selectByIndex(3);
-		driver.findElement(By.xpath("//*[@class=\"required postcode form-group\"]")).sendKeys("084");
+		driver.findElement(By.id("postcode")).sendKeys("00000");
 		Select dropdownCountry=new Select(driver.findElement(By.xpath("//*[@id=\"id_country\"]")));
-		dropdownCountry.selectByValue("United States");
-		driver.findElement(By.xpath("//*[@id=\"phone_mobile\"]")).sendKeys("123456");
-		driver.findElement(By.xpath("//*[@id=\"alias\"]")).sendKeys("Nguyen Co Thach");
+		//dropdownCountry.selectByValue("United States");
+		dropdown.selectByIndex(21);
+		System.out.println("112222");
+		driver.findElement(By.id("authentication")).sendKeys("1234");
+		driver.findElement(By.id("phone_mobile")).sendKeys("123456");
+		driver.findElement(By.id("alias")).sendKeys("Nguyen Co Thach");
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id=\"submitAccount\"]")).click();
 		
 		
@@ -154,7 +161,7 @@ public class Bai7_SignUp {
 
 	@AfterMethod
 	public void afterMethod() {
-		driver.close();
+		//driver.close();
 
 	}
 
