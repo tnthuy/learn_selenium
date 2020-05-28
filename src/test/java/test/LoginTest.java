@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import page.CreateAccount;
 import page.Hompage;
 import page.Login;
 import page.MyAccount;
@@ -34,6 +35,17 @@ public class LoginTest {
 		assert (home.isElementPresent(home.LNK_BESTSELLER));
 
 
+	}
+	
+	@Test()
+	public void testInValidEmail(String abc123)
+	{
+		Hompage home=new Hompage(driver);
+		Login login=home.clickSignIn();
+	CreateAccount createAccount=login.login(abc123);
+	
+	
+		
 	}
 	@BeforeMethod
 	public void beforeMethod() {
