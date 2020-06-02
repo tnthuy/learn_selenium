@@ -31,15 +31,30 @@ public class CheckInfor {
 		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 		
 		System.out.println(path);
+		System.out.println("--------");
 		//Locating the Test data excel file
-		String excelPath =path+ "\\scr\\test\\java\\data\\Position.xlsx";
+		File excelPath =new File(path+ "\\scr\\test\\java\\data\\Position.xlsx");
 		System.out.println(excelPath);
 		FileInputStream fis=new FileInputStream(excelPath);
-		
+		System.out.println("--------");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
-		XSSFSheet sheet = workbook.getSheetAt(Sheet1);
 		
-		//I have added test data in the cell A1 as "SoftwareTestingMaterial.com"
+		XSSFSheet sheet = workbook.getSheetAt(0);
+
+	    //Find number of rows in excel file
+
+	    int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+	    
+	    //Create a loop over all the rows of excel file to read it
+		for (int i=0;i<rowCount+1;i++) {
+			Row row=sheet.getRow(i);
+			//create a loop to print cell value in a row
+			for (int j=0;i<row.getLastCellNum();j++) {
+				//Print Excel data in console
+				System.out.println(row.getCell(j).getStringCellValue()+ "||");
+			}
+		}
+	    //I have added test data in the cell A1 as "SoftwareTestingMaterial.com"
 		//Cell A1 = row 0 and column 0. It reads first row as 0 and Column A as 0.
 		Row row = sheet.getRow(0);
 		Cell cell = row.getCell(0);
