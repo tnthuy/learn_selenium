@@ -6,13 +6,25 @@ import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -23,47 +35,112 @@ public class CheckInfor {
 	private static XSSFWorkbook ExcelWBook;
 	private static XSSFSheet ExcelWSheet;
 
+	public class NgheNghiep {
+		String address;
+		String job;
+		int number;
+
+		public NgheNghiep(String address, String job, int number) {
+			this.address=address;
+			this.job=job;
+			this.number=number;
+
+		}
+		public String getAddress() {
+			return address;
+		}
+		public void setAddress(String addess) {
+			this.address=address;
+		}
+		public String getJob() {
+			return job;
+		}
+		public int getNumber() {
+			return number;
+		}
+	}
 	@Test
 	public void CheckData() throws IOException {
-		//mo trang
+		//mo trang web
 		driver.get("https://www.seleniumeasy.com/test/table-data-download-demo.html");
+
+		//Get number of columns
+		List<WebElement> cols=driver.findElements(By.xpath("//*[@id=\"example\"]/thead/tr/th"));
+		int numberColsBrowser=cols.size();
+		
+		//Get number of rows
+		List<WebElement> rows=driver.findElements(By.xpath("//*[@id=\"example\"]/tbody/tr"));
+		int numberRowsBrowser=rows.size();
+		
+		//doc file Excel
 		//To get current working directory:
 		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
-		
-		System.out.println(path);
-		System.out.println("--------");
+
 		//Locating the Test data excel file
-		File excelPath =new File(path+ "\\scr\\test\\java\\data\\Position.xlsx");
-		System.out.println(excelPath);
+		File excelPath =new File(path+ "\\data\\Position.xlsx");
+
 		FileInputStream fis=new FileInputStream(excelPath);
-		System.out.println("--------");
+		System.out.println("Doc file Excel");
 		XSSFWorkbook workbook = new XSSFWorkbook(fis);
-		
+
 		XSSFSheet sheet = workbook.getSheetAt(0);
 
-	    //Find number of rows in excel file
+		//Find number of rows in excel file
 
-	    int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-	    
-	    //Create a loop over all the rows of excel file to read it
-		for (int i=0;i<rowCount+1;i++) {
+		int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum()+1;
+		System.out.println("So dong trong bang Excel: "+rowCount);
+		//khai bao mang Nghe Nghiep
+		ArrayList<NgheNghiep> alNghe=new ArrayList<NgheNghiep>();
+		//Create a loop over all the rows of excel file to read it
+		for (int i=0;i<rowCount;i++) {
 			Row row=sheet.getRow(i);
 			//create a loop to print cell value in a row
-			for (int j=0;i<row.getLastCellNum();j++) {
-				//Print Excel data in console
-				System.out.println(row.getCell(j).getStringCellValue()+ "||");
+			//for (int j=0;i<row.getLastCellNum();j++) {
+			//tim address va gan vao mang
+			String CellAddress=row.getCell(0).getStringCellValue();
+			System.out.println(CellAddress);
+
+			//tim job va gan vao mang
+			String CellJob=row.getCell(1).getStringCellValue();
+			System.out.println(CellJob);
+
+			//tim so luong va gan vao mang
+			int CellNumber=(int) row.getCell(2).getNumericCellValue();
+			System.out.println(CellNumber);
+			NgheNghiep nn=new  NgheNghiep(CellAddress, CellJob, CellNumber);
+			alNghe.add(nn);
+			
+			int count=0;
+			//Doc du lieu tren table
+			for (int j=1; j<=numberRowsBrowser; j++) {
+				String textAddress=SelectTableContent(j, 3);
+				
+				String textJob=SelectTableContent(j, 2);
+	
+				if (textAddress.equals(CellAddress) && textJob.equals(CellJob)) {
+					count++;
+					}
 			}
+			System.out.println("so phan tu dem duoc tren Browser "+count);
+			if (count==CellNumber) {
+				
+				System.out.println("Du lieu giong nhau");
+			}
+			else {
+				System.out.println("Du lieu khong giong nhau");
+			}
+			
 		}
-	    //I have added test data in the cell A1 as "SoftwareTestingMaterial.com"
-		//Cell A1 = row 0 and column 0. It reads first row as 0 and Column A as 0.
-		Row row = sheet.getRow(0);
-		Cell cell = row.getCell(0);
-		System.out.println(cell);
-		System.out.println(sheet.getRow(0).getCell(0));
-		//String cellval = cell.getStringCellValue();
-		//System.out.println(cellval);
-	}
-	public static void readExcel(String filePath, String sheetName) throws Exception{
+		java.util.Iterator<NgheNghiep> itr=alNghe.iterator();
+		while(itr.hasNext()) {
+			NgheNghiep nghe=(NgheNghiep)itr.next();
+			System.out.println(nghe.address+"  "+nghe.job+"   "+nghe.number);
+		}
+}
+
+
+
+		public static void readExcel(String filePath, String sheetName) throws Exception{
 		try {
 			//Open the Excel file
 			FileInputStream ExcelFile =new FileInputStream(filePath);
@@ -125,21 +202,14 @@ public class CheckInfor {
 
 		return cells;
 	}
-	//	
-	//
-	//		//Tao mot doi tuong cua lop File de mo xlsx file
-	//		File file= new File(filePath+"\\+")
-	//
-	//				//Mo trinh duyet
-	//				driver.get("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
-	//		//tim va dien gia tri a
-	//		driver.findElement(By.xpath("//*[@id=\"sum1\"]")).sendKeys(String.valueOf(a));
-	//		//tim va dien gia tri b
-	//		driver.findElement(By.xpath("//*[@id=\"sum2\"]")).sendKeys(String.valueOf(b));
-	//		//Click to tinh kq
-	//		driver.findElement(By.xpath("//*[@id=\"gettotal\"]/button")).click();
-	//
-	//	}
+
+
+	public String SelectTableContent(int row, int column) {
+		String content=driver.findElement((By.xpath(("//*[@id=\"example\"]/tbody/tr["+row+"]/td["+column+"]")))).getText();
+		return content;
+
+	}
+
 	@BeforeMethod
 	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver", "C://Setup//chromedriver_win32/chromedriver.exe");
