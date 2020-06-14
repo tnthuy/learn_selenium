@@ -2,7 +2,9 @@ package test;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,7 +27,7 @@ public class LoginTest {
 		};
 		
 	}
-	@Test(dataProvider = "dataSet")
+	@Test(dataProvider = "dataSet", enabled = false)
 	public void testLogin(String username, String password) {
 
 		Hompage home=new Hompage(driver);
@@ -37,19 +39,39 @@ public class LoginTest {
 
 	}
 	
-	@Test()
-	public void testInValidEmail(String abc123)
+	@Test(enabled = false)
+	public void testInValidEmail()
 	{
 		Hompage home=new Hompage(driver);
 		Login login=home.clickSignIn();
-	CreateAccount createAccount=login.login(abc123);
+		login.signUpWithWrongEmail("abc123");
 	
-	
-		
 	}
+	@Test(enabled=false)
+	public void testValidEmail() throws Exception
+	{
+		Hompage home=new Hompage(driver);
+		Login login=home.clickSignIn();
+		CreateAccount createAccount=login.signUpWithValidEmail("thuytn11@lqa.com.vn");
+		MyAccount myaccount=createAccount.SignUpEmail();
+		myaccount.checkMess();	
+		}
+	
+	@Test
+	public void testNewsLetter()
+	{
+		Hompage home=new Hompage(driver);
+		home.newLetter("lqa11@gmail.com");
+		driver.get("https://www.google.com.vn/");
+		WebElement DangNhap=driver.findElement(By.xpath("//*[@id=\"gb_70\"]"));
+		DangNhap.click();
+		
+	
+	}
+	
 	@BeforeMethod
 	public void beforeMethod() {
-		System.setProperty("webdriver.chrome.driver", "E://Setup/chromedriver_win32/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C://Setup/chromedriver_win32/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -58,7 +80,7 @@ public class LoginTest {
 
 	@AfterMethod
 	public void afterMethod() {
-		driver.close();
+		//driver.close();
 	}
 
 }

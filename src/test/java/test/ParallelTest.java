@@ -16,6 +16,7 @@ import page.MyAccount;
 
 public class ParallelTest {
 	WebDriver driver;
+	String baseUrl="http://automationpractice.com/";
 	@DataProvider
 	public Object[][] dataSet(){
 		return new Object[][] {
@@ -37,21 +38,21 @@ public class ParallelTest {
 
 	}
 	@BeforeMethod
-	@Parameters("browser")
-	public void beforeMethod(String browser) {
+	@Parameters({"browser", "baseUrl"})
+	public void beforeMethod(String browser, String url) {
 		if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "E://Setup/geckodriver-v0.26.0-win64/chromedriver.exe");
+			System.setProperty("webdriver.gecko.driver", "C://Setup/geckodriver-v0.26.0-win64/chromedriver.exe");
 			driver=new ChromeDriver();
 			System.out.println("++RUN Firefox");
 		} else {
-			System.setProperty("webdriver.chrome.driver", "E://Setup/chromedriver_win32/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C://Setup/chromedriver_win32/chromedriver.exe");
 			driver=new ChromeDriver();
 			System.out.println("++RUN Chrome");
 		}
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://automationpractice.com/");
+		driver.get(baseUrl);
 	}
 
 	@AfterMethod
