@@ -26,7 +26,7 @@ public class Hompage extends Base{
 		return new Login(driver);
 	}
 	//Enter Email and Click Submit button 
-	public void newLetter(String email) {
+	public LoginGmail newLetter(String email) {
 		driver.findElement(TXT_NEWSLETTER).sendKeys(email);
 		driver.findElement(BTN_SUBMIT_NEWSLETTER).click();
 		String alert=driver.findElement(MSG_NEWSLETTER).getText();
@@ -37,5 +37,6 @@ public class Hompage extends Base{
 			System.out.println("Hien thi dung message");
 			
 		}
+		return new LoginGmail(driver);
 	}
 }

@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import page.CreateAccount;
 import page.Hompage;
 import page.Login;
+import page.LoginGmail;
 import page.MyAccount;
 
 public class LoginTest {
@@ -61,10 +62,8 @@ public class LoginTest {
 	public void testNewsLetter()
 	{
 		Hompage home=new Hompage(driver);
-		home.newLetter("lqa11@gmail.com");
-		driver.get("https://www.google.com.vn/");
-		WebElement DangNhap=driver.findElement(By.xpath("//*[@id=\"gb_70\"]"));
-		DangNhap.click();
+		LoginGmail loginGmail=home.newLetter("lqa11111@gmail.com");
+		loginGmail.LoginGmail();		
 		
 	
 	}
