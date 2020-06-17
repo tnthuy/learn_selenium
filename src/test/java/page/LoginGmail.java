@@ -37,17 +37,15 @@ public class LoginGmail extends Base {
 		driver.findElement(TXT_PASSWORD).sendKeys("Thuyvy12");
 		driver.findElement(BTN_NEXT).click();
 		driver.findElement(By.xpath("//*[contains(text(), 'Gmail')]")).click();
-		CheckMail("automationpractice");
-	}
-	public void CheckMail(String company) throws Exception {
-		//Click Inbox
+		System.out.println("click Gmail");
+		//Kiem tra email
 		driver.findElement(BTN_INBOX).click();
 		List<WebElement> unreadmail=(List<WebElement>) driver.findElement(By.className("zE"));
 		System.out.println("Total No. of unread mail"+unreadmail.size());
 		//real logic start here
 		for (int i=0;i<=unreadmail.size();i++) {
 			System.out.println(unreadmail.get(i).getText());
-			if (unreadmail.get(i).getText()==company) {
+			if (unreadmail.get(i).getText()=="automationpractice") {
 				System.out.println("Da gui mail");
 			}
 			
@@ -56,5 +54,6 @@ public class LoginGmail extends Base {
 		Thread.sleep(3000);
 		driver.close();
 	}
-
+	
+	
 }
