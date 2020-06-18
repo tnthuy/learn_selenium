@@ -38,6 +38,7 @@ public class LoginGmail extends Base {
 		driver.findElement(BTN_NEXT).click();
 		driver.findElement(By.xpath("//*[contains(text(), 'Gmail')]")).click();
 		System.out.println("click Gmail");
+		
 		//Kiem tra email
 		driver.findElement(BTN_INBOX).click();
 		List<WebElement> unreadmail=(List<WebElement>) driver.findElement(By.className("zE"));
