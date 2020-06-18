@@ -59,12 +59,20 @@ public class LoginTest {
 		}
 	
 	@Test
-	public void testNewsLetter()
+	public void testNewsLetter() throws Exception
 	{
+<<<<<<< HEAD
 		Hompage home=new Hompage(driver);
 		LoginGmail loginGmail=home.newLetter("lqa111121@gmail.com");
 		loginGmail.LoginGmail();		
 		
+=======
+		//Hompage home=new Hompage(driver);
+		//LoginGmail loginGmail=home.newLetter("lqa111211@gmail.com");
+		//loginGmail.LoginGmail();		
+		LoginGmail loginGmail=new LoginGmail(driver);
+		loginGmail.LoginGmail();
+>>>>>>> 61049d04b80510c0caa62c03c0dcd586fec8ecfd
 	
 	}
 	
