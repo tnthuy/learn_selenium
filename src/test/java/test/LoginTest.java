@@ -53,7 +53,7 @@ public class LoginTest {
 	{
 		Hompage home=new Hompage(driver);
 		Login login=home.clickSignIn();
-		CreateAccount createAccount=login.signUpWithValidEmail("thuytn11@lqa.com.vn");
+		CreateAccount createAccount=login.signUpWithValidEmail("thuytn11112@lqa.com.vn");
 		MyAccount myaccount=createAccount.SignUpEmail();
 		myaccount.checkMess();	
 		}
@@ -62,7 +62,7 @@ public class LoginTest {
 	public void testNewsLetter()
 	{
 		Hompage home=new Hompage(driver);
-		LoginGmail loginGmail=home.newLetter("lqa11111@gmail.com");
+		LoginGmail loginGmail=home.newLetter("lqa111121@gmail.com");
 		loginGmail.LoginGmail();		
 		
 	

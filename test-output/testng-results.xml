@@ -2,50 +2,31 @@
 <testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-06-15T23:31:09Z" name="Default suite" finished-at="2020-06-15T23:32:33Z" duration-ms="84059">
+  <suite started-at="2020-06-17T06:14:42Z" name="Default suite" finished-at="2020-06-17T06:15:22Z" duration-ms="39978">
     <groups>
     </groups>
-    <test started-at="2020-06-15T23:31:09Z" name="Default test" finished-at="2020-06-15T23:32:33Z" duration-ms="84059">
+    <test started-at="2020-06-17T06:14:42Z" name="Default test" finished-at="2020-06-17T06:15:22Z" duration-ms="39978">
       <class name="test.LoginTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@240237d2]" started-at="2020-06-16T06:31:09Z" name="beforeMethod" finished-at="2020-06-16T06:31:25Z" duration-ms="16602" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@14a2f921]" started-at="2020-06-17T13:14:42Z" name="beforeMethod" finished-at="2020-06-17T13:14:55Z" duration-ms="13491" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testNewsLetter()[pri:0, instance:test.LoginTest@240237d2]" started-at="2020-06-16T06:31:25Z" name="testNewsLetter" finished-at="2020-06-16T06:32:33Z" duration-ms="67388" status="FAIL">
+        <test-method signature="testNewsLetter()[pri:0, instance:test.LoginTest@14a2f921]" started-at="2020-06-17T13:14:55Z" name="testNewsLetter" finished-at="2020-06-17T13:15:21Z" duration-ms="26459" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"*[name='password']"}
-  (Session info: chrome=83.0.4103.97)
+              <![CDATA[Cannot locate an element using name=password
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-H6EOCLE', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.14 (be04594a2b841..., userDataDir: C:\Users\Vinh\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:49441}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 24ed575fbb3866b26be5fd3fee43837b
-*** Element info: {Using=name, value=password}]]>
+System info: host: 'CA020705Z2', ip: '10.10.22.43', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='password']"}
-  (Session info: chrome=83.0.4103.97)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using name=password
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-H6EOCLE', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.14 (be04594a2b841..., userDataDir: C:\Users\Vinh\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:49441}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 24ed575fbb3866b26be5fd3fee43837b
-*** Element info: {Using=name, value=password}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+System info: host: 'CA020705Z2', ip: '10.10.22.43', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
 	at org.openqa.selenium.By$ByName.findElement(By.java:284)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
@@ -54,7 +35,7 @@ Session ID: 24ed575fbb3866b26be5fd3fee43837b
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
@@ -82,7 +63,7 @@ Session ID: 24ed575fbb3866b26be5fd3fee43837b
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testNewsLetter -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@240237d2]" started-at="2020-06-16T06:32:33Z" name="afterMethod" finished-at="2020-06-16T06:32:33Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@14a2f921]" started-at="2020-06-17T13:15:22Z" name="afterMethod" finished-at="2020-06-17T13:15:22Z" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
