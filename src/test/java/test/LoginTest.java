@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import page.ContactUs;
 import page.CreateAccount;
 import page.Hompage;
 import page.Login;
@@ -61,12 +62,18 @@ public class LoginTest {
 	@Test
 	public void testNewsLetter() throws Exception
 	{
-		//Hompage home=new Hompage(driver);
-		//LoginGmail loginGmail=home.newLetter("lqa111211@gmail.com");
-		//loginGmail.LoginGmail();		
-		LoginGmail loginGmail=new LoginGmail(driver);
-		loginGmail.LoginGmail();
-	
+		Hompage home=new Hompage(driver);
+		LoginGmail loginGmail=home.newLetter("lqa111211@gmail.com");
+		loginGmail.LoginGmail("tnthuy140583@gmail.com", "Thuyvy12");		
+		
+	}
+	@Test
+	public void testContactUs() throws Exception {
+		Hompage home=new Hompage(driver);
+		ContactUs contactUs=home.clickContactUs();
+		LoginGmail loginGmail=contactUs.contactUs();
+		loginGmail.LoginGmail("tnthuy140583@gmail.com", "Thuyvy12");		
+		
 	}
 	
 	@BeforeMethod
