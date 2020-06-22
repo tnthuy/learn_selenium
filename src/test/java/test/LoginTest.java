@@ -54,7 +54,7 @@ public class LoginTest {
 	{
 		Hompage home=new Hompage(driver);
 		Login login=home.clickSignIn();
-		CreateAccount createAccount=login.signUpWithValidEmail("thuytn11@lqa.com.vn");
+		CreateAccount createAccount=login.signUpWithValidEmail("thuytn11112@lqa.com.vn");
 		MyAccount myaccount=createAccount.SignUpEmail();
 		myaccount.checkMess();	
 		}
@@ -62,6 +62,7 @@ public class LoginTest {
 	@Test
 	public void testNewsLetter() throws Exception
 	{
+<<<<<<< HEAD
 		Hompage home=new Hompage(driver);
 		LoginGmail loginGmail=home.newLetter("lqa-tester_1@b-eee.com");
 		loginGmail.LoginGmail("lqa-tester@b-eee.com", "Thuyvy12");		
@@ -74,6 +75,13 @@ public class LoginTest {
 		LoginGmail loginGmail=contactUs.contactUs();
 		loginGmail.LoginGmail("tnthuy140583@gmail.com", "Thuyvy12");		
 		
+=======
+
+		Hompage home=new Hompage(driver);
+		LoginGmail loginGmail=home.newLetter("lqa1112121@gmail.com");
+		loginGmail.LoginGmail();		
+			
+>>>>>>> 64ea55c154934c3fda8fb76e871e182ebd246389
 	}
 	
 	@BeforeMethod

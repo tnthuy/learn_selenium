@@ -28,14 +28,19 @@ public class LoginGmail extends Base {
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
+<<<<<<< HEAD
 		driver.get("https://mail.google.com");
+=======
+		driver.get("https://www.google.com/intl/vi/gmail/about/#");
+>>>>>>> 64ea55c154934c3fda8fb76e871e182ebd246389
 		//Dang nhap
 		driver.findElement(TXT_EMAIL).sendKeys(email);
 		driver.findElement(BTN_NEXTEMAIL).click();
 		driver.findElement(TXT_PASSWORD).sendKeys(pass);
 		driver.findElement(BTN_NEXT).click();
-		driver.findElement(By.xpath("//*[contains(text(), 'Gmail')]")).click();
-		System.out.println("click Gmail");
+		//driver.findElement(By.xpath("//*[contains(text(), 'Gmail')]")).click();
+		
+		
 		//Kiem tra email
 		driver.findElement(BTN_INBOX).click();
 		List<WebElement> unreadmail=(List<WebElement>) driver.findElement(By.className("zF"));
