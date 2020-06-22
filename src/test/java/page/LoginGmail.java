@@ -28,7 +28,7 @@ public class LoginGmail extends Base {
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("https://www.google.com.vn/");
+		driver.get("https://www.google.com/intl/vi/gmail/about/#");
 		//Dang nhap
 		WebElement DangNhap=driver.findElement(BTN_DANGNHAP);
 		DangNhap.click();
@@ -36,8 +36,8 @@ public class LoginGmail extends Base {
 		driver.findElement(BTN_NEXTEMAIL).click();
 		driver.findElement(TXT_PASSWORD).sendKeys("Thuyvy12");
 		driver.findElement(BTN_NEXT).click();
-		driver.findElement(By.xpath("//*[contains(text(), 'Gmail')]")).click();
-		System.out.println("click Gmail");
+		//driver.findElement(By.xpath("//*[contains(text(), 'Gmail')]")).click();
+		
 		
 		//Kiem tra email
 		driver.findElement(BTN_INBOX).click();
