@@ -28,11 +28,9 @@ public class LoginGmail extends Base {
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-<<<<<<< HEAD
+
 		driver.get("https://mail.google.com");
-=======
-		driver.get("https://www.google.com/intl/vi/gmail/about/#");
->>>>>>> 64ea55c154934c3fda8fb76e871e182ebd246389
+
 		//Dang nhap
 		driver.findElement(TXT_EMAIL).sendKeys(email);
 		driver.findElement(BTN_NEXTEMAIL).click();
