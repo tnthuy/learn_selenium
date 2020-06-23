@@ -5,6 +5,7 @@ import java.sql.Driver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class Hompage extends Base{
 	//Declare all objects on pages
@@ -14,13 +15,15 @@ public class Hompage extends Base{
 	public By BTN_SUBMIT_NEWSLETTER=By.name("submitNewsletter");
 	public By MSG_NEWSLETTER=By.xpath("//*[@class=\"alert alert-success\"]");
 	public By BTN_CONTACTUS=By.xpath("//*[@id=\"contact-link\"]");
+	public By TXT_SEARCH=By.id("search_query_top");
+	public By BTN_SEARCH=By.name("submit_search");
 	
 	//Constructor
 	public Hompage(WebDriver driver) {
 		this.driver=driver;
 
 	}
-	//Action on Page
+	//Action on Page for SignIn button
 	public Login clickSignIn() {
 
 		driver.findElement(BTN_SIGNIN).click();
@@ -44,5 +47,28 @@ public class Hompage extends Base{
 
 		driver.findElement(BTN_CONTACTUS).click();
 		return new ContactUs(driver);
+	}
+	public void EnterKeyToSearch(String key) {
+		WebElement search=driver.findElement(TXT_SEARCH);
+		//Hiển thị chữ search trước khi enter key
+		String searchTextPlaceHolder=search.getAttribute("placeholder");
+		
+		System.out.println("Text before Enter "+ searchTextPlaceHolder);
+		//Click to search
+		search.click();
+		//Enter key to search
+		search.sendKeys(key);
+		driver.findElement(BTN_SEARCH).click();
+		
+		String searchTextAfter=search.getAttribute("placeholder");
+		System.out.println(searchTextAfter);
+		System.out.println("sau khi nhap key//"+ searchTextAfter);
+		if (searchTextAfter.contains(searchTextPlaceHolder)) {
+			System.out.println("there is Search text in the Textbox");
+				
+		} else
+		{
+			System.out.println("There is no Search text in the Textbox");
+		}
 	}
 }
