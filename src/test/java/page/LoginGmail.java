@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginGmail extends Base {
-	public By BTN_DANGNHAP=By.xpath("//*[@id=\"gb_70\"]");
+	public By BTN_DANGNHAP=By.xpath(" ");
 	public By TXT_EMAIL=By.xpath("//*[@id=\"identifierId\"]");
 	public By BTN_NEXTEMAIL=By.xpath("//*[@id=\"identifierNext\"]");
 	public By TXT_PASSWORD=By.name("password");
