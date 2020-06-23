@@ -69,6 +69,7 @@ public class LoginTest {
 		loginGmail.LoginGmail("lqa-tester@b-eee.com", "Thuyvy12");		
 		
 	}
+	//contact Us
 	@Test
 	public void testContactUs() throws Exception {
 		Hompage home=new Hompage(driver);
@@ -77,7 +78,13 @@ public class LoginTest {
 		loginGmail.LoginGmail("tnthuy140583@gmail.com", "Thuyvy12");		
 		
 	}
-	
+	//Enter tu khoa cho Search
+	@Test
+	public void testSearchEnter() {
+		Hompage home=new Hompage(driver);
+		home.EnterKeyToSearch("Dress");
+		
+	}
 	@BeforeMethod
 	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver", "C://Setup/chromedriver_win32/chromedriver.exe");
