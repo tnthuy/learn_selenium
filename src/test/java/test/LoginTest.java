@@ -1,3 +1,4 @@
+
 package test;
 
 import java.util.concurrent.TimeUnit;
@@ -11,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import page.ContactUs;
 import page.CreateAccount;
 import page.Hompage;
 import page.Login;
@@ -53,7 +55,7 @@ public class LoginTest {
 	{
 		Hompage home=new Hompage(driver);
 		Login login=home.clickSignIn();
-		CreateAccount createAccount=login.signUpWithValidEmail("thuytn11112@lqa.com.vn");
+		CreateAccount createAccount=login.signUpWithValidEmail("thuytn131112@lqa.com.vn");
 		MyAccount myaccount=createAccount.SignUpEmail();
 		myaccount.checkMess();	
 		}
@@ -63,9 +65,17 @@ public class LoginTest {
 	{
 
 		Hompage home=new Hompage(driver);
-		LoginGmail loginGmail=home.newLetter("lqa9223@gmail.com");
-		loginGmail.LoginGmail();		
-			
+		LoginGmail loginGmail=home.newLetter("lqa-tester_1@b-eee.com");
+		loginGmail.LoginGmail("lqa-tester@b-eee.com", "Thuyvy12");		
+		
+	}
+	@Test
+	public void testContactUs() throws Exception {
+		Hompage home=new Hompage(driver);
+		ContactUs contactUs=home.clickContactUs();
+		LoginGmail loginGmail=contactUs.contactUs();
+		loginGmail.LoginGmail("tnthuy140583@gmail.com", "Thuyvy12");		
+		
 	}
 	
 	@BeforeMethod
@@ -83,3 +93,4 @@ public class LoginTest {
 	}
 
 }
+

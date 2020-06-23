@@ -13,7 +13,8 @@ public class Hompage extends Base{
 	public By TXT_NEWSLETTER=By.xpath("//*[@id=\"newsletter-input\"]");
 	public By BTN_SUBMIT_NEWSLETTER=By.name("submitNewsletter");
 	public By MSG_NEWSLETTER=By.xpath("//*[@class=\"alert alert-success\"]");
-
+	public By BTN_CONTACTUS=By.xpath("//*[@id=\"contact-link\"]");
+	
 	//Constructor
 	public Hompage(WebDriver driver) {
 		this.driver=driver;
@@ -38,5 +39,10 @@ public class Hompage extends Base{
 			
 		}
 		return new LoginGmail(driver);
+	}
+	public ContactUs clickContactUs() {
+
+		driver.findElement(BTN_CONTACTUS).click();
+		return new ContactUs(driver);
 	}
 }
