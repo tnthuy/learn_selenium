@@ -1,5 +1,9 @@
 package page;
 
+import java.io.File;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,11 +14,11 @@ public class ContactUs extends Base{
 	public By DRL_SUBJECT=By.xpath("//*[@id=\"id_contact\"]");
 	public By TXT_EMAIL=By.xpath("//*[@id=\"email\"]");
 	public By TXT_ORDER=By.xpath("//*[@id=\"id_order\"]");
-	public By ATTACHFILE=By.xpath("//*[@class=\"fileUpload\"]");
+	public By ATTACHFILE=By.xpath("//*[@id=\"uniform-fileUpload\"]");
 	public By TXT_MESSAGE=By.xpath("//*[@id=\"message\"]");
 	public By BTN_SEND=By.xpath("//*[@id=\"submitMessage\"]");
 	public By MESSAGE=By.xpath("//*[@class=\"alert alert-success\"]");
-	
+
 
 	public ContactUs(WebDriver driver) {
 		this.driver=driver;
@@ -26,12 +30,21 @@ public class ContactUs extends Base{
 		driver.findElement(TXT_EMAIL).sendKeys("tnthuy140582@gmail.com");
 		driver.findElement(TXT_ORDER).sendKeys("Thuy Test");
 		WebElement uploadElement=driver.findElement(ATTACHFILE);
+	
+		uploadElement.click();
 		
-		// enter the file path onto the file-selection input field
-        uploadElement.sendKeys("C:\\Hello.java");
-        System.out.println("tim thay");
-        
-        driver.findElement(TXT_MESSAGE).sendKeys(" Test add Contact Us for AutomationPractice");
+		//To get current working directory:
+		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
+		System.out.println(path);
+		
+		//Locating the Test data excel file
+		String filePath =path.toString()+"\\Hello.java";
+
+
+		uploadElement.sendKeys(filePath);
+		System.out.println("tim thay");
+
+		driver.findElement(TXT_MESSAGE).sendKeys(" Test add Contact Us for AutomationPractice");
 		driver.findElement(BTN_SEND).click();
 		String mess=driver.findElement(MESSAGE).getText();
 		System.out.println(mess);
@@ -43,7 +56,7 @@ public class ContactUs extends Base{
 			System.out.println(" show chua dung "+ mess);
 		}
 		return new LoginGmail(driver);
-		
+
 	}
 
 
