@@ -52,17 +52,19 @@ public class Hompage extends Base{
 		WebElement search=driver.findElement(TXT_SEARCH);
 		//Hiển thị chữ search trước khi enter key
 		String searchTextPlaceHolder=search.getAttribute("placeholder");
-		
-		System.out.println("Text before Enter "+ searchTextPlaceHolder);
+		String valueText=search.getAttribute("value");
+		System.out.println("Text shows before enttering key:  "+ searchTextPlaceHolder);
 		//Click to search
 		search.click();
 		//Enter key to search
 		search.sendKeys(key);
-		driver.findElement(BTN_SEARCH).click();
+		
+		//driver.findElement(BTN_SEARCH).click();
 		
 		String searchTextAfter=search.getAttribute("placeholder");
-		System.out.println(searchTextAfter);
-		System.out.println("sau khi nhap key//"+ searchTextAfter);
+		String valueTextAfter=search.getAttribute("value");
+		System.out.println(valueTextAfter);
+		System.out.println("Text shows after enter key: "+ searchTextAfter);
 		if (searchTextAfter.contains(searchTextPlaceHolder)) {
 			System.out.println("there is Search text in the Textbox");
 				

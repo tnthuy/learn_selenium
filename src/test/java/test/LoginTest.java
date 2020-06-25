@@ -67,7 +67,7 @@ public class LoginTest {
 		Hompage home=new Hompage(driver);
 		LoginGmail loginGmail=home.newLetter("lqa-tester_1@b-eee.com");
 		loginGmail.LoginGmail("lqa-tester@b-eee.com", "Thuyvy12");		
-		
+		 
 	}
 	//contact Us
 	@Test
