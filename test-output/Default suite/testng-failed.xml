@@ -5,7 +5,6 @@
     <classes>
       <class name="test.LoginTest">
         <methods>
-          <include name="testNewsLetter"/>
           <include name="testContactUs"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
