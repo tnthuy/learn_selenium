@@ -47,10 +47,10 @@ public class ContactUs extends Base{
 		System.out.println(mess);
 		String message="Your message has been successfully sent to our team";
 		if (mess.equalsIgnoreCase(message)){
-			System.out.println("show dung message");
+			System.out.println("show chua dung message: "+mess);
 		}
 		else {
-			System.out.println(" show chua dung "+ mess);
+			System.out.println(" show dung message "+ mess);
 		}
 		return new LoginGmail(driver);
 
