@@ -42,18 +42,21 @@ public class LoginGmail extends Base {
 		
 		
 		//Kiem tra email
-		driver.findElement(BTN_INBOX).click();
-		List<WebElement> unreadmail=(List<WebElement>) driver.findElement(By.className("zF"));
-		System.out.println("Total No. of unread mail"+unreadmail.size());
+		//driver.findElement(BTN_INBOX).click();
+		System.out.println("START");
+		//List<WebElement> unreadmail=(List<WebElement>) driver.findElement(By.className("zF"));
+		String item=driver.findElement(By.className("zF")).getText();
+		System.out.println(item);
+		//System.out.println("Total No. of unread mail"+unreadmail.size());
 		
 		// Mailer name for which i want to check do i have an email in my inbox 
-		String MyMailer = "Wrike";
+		String MyMailer = "tran thuy";
 		
 		//real logic start here
-		for (int i=0;i<=unreadmail.size();i++) {
+		/*for (int i=0;i<=unreadmail.size();i++) {
 			System.out.println(unreadmail.get(i).getText());
 			if (unreadmail.get(i).getText().equals(MyMailer)) {
-				System.out.println("Da gui mail");
+				System.out.println("Da nhan duoc mail");
 			}
 			else {
 				System.out.println("Chua thay gui mail from  "+ MyMailer);
@@ -65,5 +68,7 @@ public class LoginGmail extends Base {
 		driver.close();
 	}
 	
-	
+	*/
+		
+	}
 }
