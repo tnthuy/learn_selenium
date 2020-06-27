@@ -54,6 +54,7 @@ public class Hompage extends Base{
 		String searchTextPlaceHolder=search.getAttribute("placeholder");
 		String valueText=search.getAttribute("value");
 		System.out.println("Text shows before enttering key:  "+ searchTextPlaceHolder);
+		System.out.println("Text show before:"+valueText);
 		//Click to search
 		search.click();
 		//Enter key to search
