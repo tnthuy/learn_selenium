@@ -93,7 +93,12 @@ public class Hompage extends Base{
 		search.sendKeys(key);
 		
 		//Check the list suggestion showing
-	Select option=new Select(driver.findElement(LST_PRODUCT));
+		WebElement dropElement=driver.findElement(LST_PRODUCT);
+	Select dropdown=new Select(dropElement);
+	
+	dropdown.deselectByVisibleText(key);
+	driver
+	
 	System.out.println(option.getOptions());
 	System.out.println(option.getAllSelectedOptions());
 		
