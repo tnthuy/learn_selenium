@@ -6,6 +6,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class Hompage extends Base{
 	//Declare all objects on pages
@@ -17,6 +18,7 @@ public class Hompage extends Base{
 	public By BTN_CONTACTUS=By.xpath("//*[@id=\"contact-link\"]");
 	public By TXT_SEARCH=By.id("search_query_top");
 	public By BTN_SEARCH=By.name("submit_search");
+	public By LST_PRODUCT=By.xpath("//*[@class=\"ac_results\"]");
 	
 	//Constructor
 	public Hompage(WebDriver driver) {
@@ -66,14 +68,35 @@ public class Hompage extends Base{
 		
 		String searchTextAfter=search.getAttribute("placeholder");
 		String valueTextAfter=search.getAttribute("value");
-		System.out.println(valueTextAfter);
+		System.out.println("Text tim kiem: "+ valueTextAfter);
 		System.out.println("Text shows after enter key: "+ searchTextAfter);
-		if (searchTextAfter.contains(searchTextPlaceHolder)) {
+		if (valueTextAfter.contains(searchTextPlaceHolder)) {
 			System.out.println("there is Search text in the Textbox");
 				
 		} else
 		{
 			System.out.println("There is no Search text in the Textbox");
 		}
+		search.clear();
+		System.out.println("Text show sau khi xoa key tim kiem: "+searchTextAfter);
+		String valueTextAfterClear=search.getAttribute("value");
+		System.out.println("Text tim kien sau khi xoa key: "+valueTextAfterClear);
+	}
+	public void CheckSuggestSearch(String key) {
+		//Tim search
+		WebElement search=driver.findElement(TXT_SEARCH);
+
+		//Click to search
+		search.click();
+		
+		//Enter key to search
+		search.sendKeys(key);
+		
+		//Check the list suggestion showing
+	Select option=new Select(driver.findElement(LST_PRODUCT));
+	System.out.println(option.getOptions());
+	System.out.println(option.getAllSelectedOptions());
+		
+		
 	}
 }
