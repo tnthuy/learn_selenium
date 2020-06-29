@@ -5,11 +5,7 @@
     <classes>
       <class name="test.LoginTest">
         <methods>
-<<<<<<< HEAD
-          <include name="testContactUs"/>
-=======
-          <include name="testSearchEnter"/>
->>>>>>> d8f6321c8d295b7da67220bd6c0773eea2afa295
+          <include name="OptionShowingForSearch"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>
