@@ -2,7 +2,27 @@
 <testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2020-06-26T08:33:47Z" name="Default suite" finished-at="2020-06-26T08:34:47Z" duration-ms="59969">
+=======
+<<<<<<< HEAD
+  <suite started-at="2020-06-25T15:34:20Z" name="Default suite" finished-at="2020-06-25T15:34:57Z" duration-ms="36736">
+    <groups>
+    </groups>
+    <test started-at="2020-06-25T15:34:20Z" name="Default test" finished-at="2020-06-25T15:34:57Z" duration-ms="36736">
+      <class name="test.LoginTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@5af97850]" started-at="2020-06-25T22:34:20Z" name="beforeMethod" finished-at="2020-06-25T22:34:56Z" duration-ms="36069" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testSearchEnter()[pri:0, instance:test.LoginTest@5af97850]" started-at="2020-06-25T22:34:56Z" name="testSearchEnter" finished-at="2020-06-25T22:34:57Z" duration-ms="609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchEnter -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@5af97850]" started-at="2020-06-25T22:34:57Z" name="afterMethod" finished-at="2020-06-25T22:34:57Z" duration-ms="0" status="PASS">
+=======
+  <suite started-at="2020-06-25T11:19:26Z" name="Default suite" finished-at="2020-06-25T11:19:40Z" duration-ms="13890">
+>>>>>>> e10b936eb17bd9a9f48a15c5cd85fc4e3464cf63
     <groups>
     </groups>
     <test started-at="2020-06-26T08:33:47Z" name="Default test" finished-at="2020-06-26T08:34:47Z" duration-ms="59969">
@@ -14,8 +34,14 @@
         <test-method signature="testContactUs()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-26T15:34:06Z" name="testContactUs" finished-at="2020-06-26T15:34:47Z" duration-ms="41037" status="PASS">
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testContactUs -->
         <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-26T15:34:47Z" name="afterMethod" finished-at="2020-06-26T15:34:47Z" duration-ms="1" status="PASS">
+=======
+        </test-method> <!-- testSearchEnter -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-25T18:19:40Z" name="afterMethod" finished-at="2020-06-25T18:19:40Z" duration-ms="0" status="PASS">
+>>>>>>> d8f6321c8d295b7da67220bd6c0773eea2afa295
+>>>>>>> e10b936eb17bd9a9f48a15c5cd85fc4e3464cf63
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

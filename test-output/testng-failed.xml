@@ -5,7 +5,15 @@
     <classes>
       <class name="test.LoginTest">
         <methods>
+<<<<<<< HEAD
           <include name="testContactUs"/>
+=======
+<<<<<<< HEAD
+          <include name="testContactUs"/>
+=======
+          <include name="testSearchEnter"/>
+>>>>>>> d8f6321c8d295b7da67220bd6c0773eea2afa295
+>>>>>>> e10b936eb17bd9a9f48a15c5cd85fc4e3464cf63
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
         </methods>
