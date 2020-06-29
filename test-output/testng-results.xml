@@ -2,20 +2,20 @@
 <testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-06-25T11:19:26Z" name="Default suite" finished-at="2020-06-25T11:19:40Z" duration-ms="13890">
+  <suite started-at="2020-06-26T08:33:47Z" name="Default suite" finished-at="2020-06-26T08:34:47Z" duration-ms="59969">
     <groups>
     </groups>
-    <test started-at="2020-06-25T11:19:26Z" name="Default test" finished-at="2020-06-25T11:19:40Z" duration-ms="13890">
+    <test started-at="2020-06-26T08:33:47Z" name="Default test" finished-at="2020-06-26T08:34:47Z" duration-ms="59969">
       <class name="test.LoginTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-25T18:19:26Z" name="beforeMethod" finished-at="2020-06-25T18:19:40Z" duration-ms="13526" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-26T15:33:47Z" name="beforeMethod" finished-at="2020-06-26T15:34:06Z" duration-ms="18881" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSearchEnter()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-25T18:19:40Z" name="testSearchEnter" finished-at="2020-06-25T18:19:40Z" duration-ms="333" status="PASS">
+        <test-method signature="testContactUs()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-26T15:34:06Z" name="testContactUs" finished-at="2020-06-26T15:34:47Z" duration-ms="41037" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSearchEnter -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-25T18:19:40Z" name="afterMethod" finished-at="2020-06-25T18:19:40Z" duration-ms="0" status="PASS">
+        </test-method> <!-- testContactUs -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-26T15:34:47Z" name="afterMethod" finished-at="2020-06-26T15:34:47Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
