@@ -89,7 +89,7 @@ public class LoginTest {
 	@Test
 	public void OptionShowingForSearch() {
 		Hompage home=new Hompage(driver);
-		home.CheckSuggestSearch("Dress");
+		home.CheckSuggestSearch("Dress", "Printed");
 	}
 	@BeforeMethod
 	public void beforeMethod() {
