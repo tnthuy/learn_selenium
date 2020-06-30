@@ -1,6 +1,7 @@
 package page;
 
 import java.sql.Driver;
+import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -19,6 +20,8 @@ public class Hompage extends Base{
 	public By TXT_SEARCH=By.id("search_query_top");
 	public By BTN_SEARCH=By.name("submit_search");
 	public By LST_PRODUCT=By.xpath("//*[@class=\"ac_results\"]");
+	public By ICO_SEARCH=By.name("submit_search");
+	public By ITEMPRODUCT=By.xpath("//*[@itemprop=\"name\"]");
 	
 	//Constructor
 	public Hompage(WebDriver driver) {
@@ -41,7 +44,7 @@ public class Hompage extends Base{
 		String alertMess= " Newsletter : You have successfully subscribed to this newsletter.";
 		if (alert.equals(String.valueOf(alertMess))) {
 			System.out.println("Hien thi dung message");
-			
+
 		}
 		return new LoginGmail(driver);
 	}
@@ -63,16 +66,16 @@ public class Hompage extends Base{
 		search.click();
 		//Enter key to search
 		search.sendKeys(key);
-		
+
 		//driver.findElement(BTN_SEARCH).click();
-		
+
 		String searchTextAfter=search.getAttribute("placeholder");
 		String valueTextAfter=search.getAttribute("value");
 		System.out.println("Text tim kiem: "+ valueTextAfter);
 		System.out.println("Text shows after enter key: "+ searchTextAfter);
 		if (valueTextAfter.contains(searchTextPlaceHolder)) {
 			System.out.println("there is Search text in the Textbox");
-				
+
 		} else
 		{
 			System.out.println("There is no Search text in the Textbox");
@@ -82,26 +85,52 @@ public class Hompage extends Base{
 		String valueTextAfterClear=search.getAttribute("value");
 		System.out.println("Text tim kien sau khi xoa key: "+valueTextAfterClear);
 	}
-	public void CheckSuggestSearch(String key) {
+	public void CheckSuggestSearch(String key, String option) {
 		//Tim search
 		WebElement search=driver.findElement(TXT_SEARCH);
 
 		//Click to search
 		search.click();
-		
+
 		//Enter key to search
 		search.sendKeys(key);
 		
+
 		//Check the list suggestion showing
-		WebElement dropElement=driver.findElement(LST_PRODUCT);
-	Select dropdown=new Select(dropElement);
-	
-	dropdown.deselectByVisibleText(key);
-	driver
-	
-	System.out.println(option.getOptions());
-	System.out.println(option.getAllSelectedOptions());
+		WebElement dropElement= driver.findElement(LST_PRODUCT);
+		List<WebElement> itemList=dropElement.findElements(By.tagName("li"));
 		
+		System.out.println("Danh sach goi y");
+		for (WebElement li:itemList) {
+			if (li.getText().contains(key)) {
+				System.out.println(li.getText());
+				System.out.println("Co chua :"+key);
+			}
+			else {
+				System.out.println(li.getText());
+				System.out.println("Goi y khong chua :"+key);
+			}
+			System.out.println("********");
+		}
+
+		//Select one otion
+		for (WebElement li:itemList) {
+			if (li.getText().contains(option)) {
+				li.click();
+				//Click to Search icon
+				driver.findElement(ICO_SEARCH).click();
+				System.out.println("click search");
+			}
+			
+		}
 		
+		WebElement product=driver.findElement(ITEMPRODUCT);
+		System.out.println("show product suitable");
+		if(product.getText().contains(option)) {
+			//Print the label
+			System.out.println("item showing is: "+ product.getText());
+		}
+		
+
 	}
 }

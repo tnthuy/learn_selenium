@@ -1,23 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="6" total="7" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
 <<<<<<< HEAD
   <suite started-at="2020-06-26T08:33:47Z" name="Default suite" finished-at="2020-06-26T08:34:47Z" duration-ms="59969">
 =======
 <<<<<<< HEAD
   <suite started-at="2020-06-25T15:34:20Z" name="Default suite" finished-at="2020-06-25T15:34:57Z" duration-ms="36736">
+=======
+  <suite started-at="2020-06-29T15:50:38Z" name="Default suite" finished-at="2020-06-29T15:51:00Z" duration-ms="21935">
+>>>>>>> b0394824024234a43a476640749ced219a477e1b
     <groups>
     </groups>
-    <test started-at="2020-06-25T15:34:20Z" name="Default test" finished-at="2020-06-25T15:34:57Z" duration-ms="36736">
+    <test started-at="2020-06-29T15:50:38Z" name="Default test" finished-at="2020-06-29T15:51:00Z" duration-ms="21935">
       <class name="test.LoginTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@5af97850]" started-at="2020-06-25T22:34:20Z" name="beforeMethod" finished-at="2020-06-25T22:34:56Z" duration-ms="36069" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginTest@5ef60048]" started-at="2020-06-29T22:50:38Z" name="beforeMethod" finished-at="2020-06-29T22:50:52Z" duration-ms="14360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSearchEnter()[pri:0, instance:test.LoginTest@5af97850]" started-at="2020-06-25T22:34:56Z" name="testSearchEnter" finished-at="2020-06-25T22:34:57Z" duration-ms="609" status="PASS">
+        <test-method signature="OptionShowingForSearch()[pri:0, instance:test.LoginTest@5ef60048]" started-at="2020-06-29T22:50:52Z" name="OptionShowingForSearch" finished-at="2020-06-29T22:50:59Z" duration-ms="7483" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
+            <message>
+              <![CDATA[stale element reference: element is not attached to the page document
+  (Session info: chrome=83.0.4103.116)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-H6EOCLE', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.14 (be04594a2b841..., userDataDir: C:\Users\Vinh\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59311}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 8e26e421bea5b6b384af673fce7d4ad1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=83.0.4103.116)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-H6EOCLE', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.14 (be04594a2b841..., userDataDir: C:\Users\Vinh\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59311}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 8e26e421bea5b6b384af673fce7d4ad1
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:166)
+	at page.Hompage.CheckSuggestSearch(Hompage.java:118)
+	at test.LoginTest.OptionShowingForSearch(LoginTest.java:92)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- testSearchEnter -->
         <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@5af97850]" started-at="2020-06-25T22:34:57Z" name="afterMethod" finished-at="2020-06-25T22:34:57Z" duration-ms="0" status="PASS">
 =======
@@ -42,6 +110,10 @@
         <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@780cb77]" started-at="2020-06-25T18:19:40Z" name="afterMethod" finished-at="2020-06-25T18:19:40Z" duration-ms="0" status="PASS">
 >>>>>>> d8f6321c8d295b7da67220bd6c0773eea2afa295
 >>>>>>> e10b936eb17bd9a9f48a15c5cd85fc4e3464cf63
+=======
+        </test-method> <!-- OptionShowingForSearch -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginTest@5ef60048]" started-at="2020-06-29T22:51:00Z" name="afterMethod" finished-at="2020-06-29T22:51:00Z" duration-ms="1" status="PASS">
+>>>>>>> b0394824024234a43a476640749ced219a477e1b
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
