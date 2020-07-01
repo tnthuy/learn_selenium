@@ -21,7 +21,8 @@ public class Hompage extends Base{
 	public By BTN_SEARCH=By.name("submit_search");
 	public By LST_PRODUCT=By.xpath("//*[@class=\"ac_results\"]");
 	public By ICO_SEARCH=By.name("submit_search");
-	public By ITEMPRODUCT=By.xpath("//*[@itemprop=\"name\"]");
+	public By ITEMPRODUCT=By.xpath("//*[@id=\"center_column\"]/div/div/div[3]/h1");
+	public By MSG_INVALIDSEARCH=By.xpath("//*[@class=\"alert alert-warning\"]");
 	
 	//Constructor
 	public Hompage(WebDriver driver) {
@@ -118,8 +119,8 @@ public class Hompage extends Base{
 			if (li.getText().contains(option)) {
 				li.click();
 				//Click to Search icon
-				driver.findElement(ICO_SEARCH).click();
-				System.out.println("click search");
+				//driver.findElement(ICO_SEARCH).click();
+				//System.out.println("click search");
 			}
 			
 		}
@@ -133,4 +134,29 @@ public class Hompage extends Base{
 		
 
 	}
+	public void CheckSearchInvalid(String invalidKey) {
+		//Tim search
+				WebElement search=driver.findElement(TXT_SEARCH);
+
+				//Click to search
+				search.click();
+
+				//Enter key to search
+				search.sendKeys(invalidKey);
+				
+				//Click to Search icon
+				driver.findElement(ICO_SEARCH).click();
+				String messInvalidSearch="No results were found for your search";
+				WebElement alert=driver.findElement(MSG_INVALIDSEARCH);
+				if (alert.getText().contains(messInvalidSearch)) {
+					System.out.println("show dung alert: "+alert.getText());
+				}
+				else {
+					System.out.println("Doesn't show the alert: "+alert.getText());
+				}
+				
+	}
+	
+	public void BuyItems() {
+}
 }

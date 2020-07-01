@@ -28,7 +28,7 @@ public class LoginTest {
 			{"thuy140583@gmail.com", "Thuyvy12"},
 			{"datadriven@test.com", "123456"}
 		};
-		
+
 	}
 	@Test(dataProvider = "dataSet", enabled = false)
 	public void testLogin(String username, String password) {
@@ -41,15 +41,17 @@ public class LoginTest {
 
 
 	}
-	
+
 	@Test(enabled = false)
 	public void testInValidEmail()
 	{
 		Hompage home=new Hompage(driver);
 		Login login=home.clickSignIn();
 		login.signUpWithWrongEmail("abc123");
-	
+
 	}
+
+	//TC2
 	@Test(enabled=false)
 	public void testValidEmail() throws Exception
 	{
@@ -58,8 +60,8 @@ public class LoginTest {
 		CreateAccount createAccount=login.signUpWithValidEmail("thuytn131112@lqa.com.vn");
 		MyAccount myaccount=createAccount.SignUpEmail();
 		myaccount.checkMess();	
-		}
-	
+	}
+	//TC3
 	@Test
 	public void testNewsLetter() throws Exception
 	{
@@ -67,29 +69,50 @@ public class LoginTest {
 		Hompage home=new Hompage(driver);
 		LoginGmail loginGmail=home.newLetter("lqa-tester_1@b-eee.com");
 		loginGmail.LoginGmail("lqa-tester@b-eee.com", "Thuyvy12");		
-		 
+
 	}
 	//contact Us
+	//TC4
 	@Test
 	public void testContactUs() throws Exception {
 		Hompage home=new Hompage(driver);
 		ContactUs contactUs=home.clickContactUs();
 		LoginGmail loginGmail=contactUs.contactUs();
 		loginGmail.LoginGmail("tnthuy140583@gmail.com", "Thuyvy12");		
-		
+
 	}
 	//Enter tu khoa cho Search
+	//TC5
 	@Test
 	public void testSearchEnter() {
 		Hompage home=new Hompage(driver);
 		home.EnterKeyToSearch("Dress");
-		
+
 	}
 	//Check option suggestion showing
+	//TC6
+
 	@Test
 	public void OptionShowingForSearch() {
 		Hompage home=new Hompage(driver);
 		home.CheckSuggestSearch("Dress", "Printed");
+	}
+
+	//Check search with wrong condition
+	//TC7
+	@Test
+	public void OptionShowingForSearchInvalid() {
+		Hompage home=new Hompage(driver);
+		home.CheckSearchInvalid("SkirtSSS");
+	}
+
+
+	//Buy item and pay money
+	//TC8
+	@Test
+	public void BuyItem() {
+		Hompage home=new Hompage(driver);
+		
 	}
 	@BeforeMethod
 	public void beforeMethod() {
