@@ -91,6 +91,13 @@ public class LoginTest {
 		Hompage home=new Hompage(driver);
 		home.CheckSuggestSearch("Dress", "Printed");
 	}
+	
+	//Buy item
+	//TC 8
+	public void BuyItemSuccess() {
+		Hompage home=new Hompage(driver);
+		
+	}
 	@BeforeMethod
 	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver", "C://Setup/chromedriver_win32/chromedriver.exe");

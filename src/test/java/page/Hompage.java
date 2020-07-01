@@ -133,4 +133,11 @@ public class Hompage extends Base{
 		
 
 	}
+	public void AddToCast() {
+		//Tim search
+		WebElement search=driver.findElement(TXT_SEARCH);
+
+		//Click to search
+		search.click();
+	}
 }
