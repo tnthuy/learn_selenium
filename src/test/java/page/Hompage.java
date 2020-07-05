@@ -1,7 +1,9 @@
 package page;
 
 import java.sql.Driver;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -23,6 +25,8 @@ public class Hompage extends Base{
 	public By ICO_SEARCH=By.name("submit_search");
 	public By ITEMPRODUCT=By.xpath("//*[@id=\"center_column\"]/div/div/div[3]/h1");
 	public By MSG_INVALIDSEARCH=By.xpath("//*[@class=\"alert alert-warning\"]");
+	public By BTN_ADDTOCART=By.xpath("//*[@id=\"homefeatured\"]//*[@data-id-product=\"1\"]");
+	
 	
 	//Constructor
 	public Hompage(WebDriver driver) {
@@ -134,7 +138,6 @@ public class Hompage extends Base{
 		
 
 	}
-<<<<<<< HEAD
 	public void AddToCast() {
 		//Tim search
 		WebElement search=driver.findElement(TXT_SEARCH);
@@ -142,7 +145,6 @@ public class Hompage extends Base{
 		//Click to search
 		search.click();
 	}
-=======
 	public void CheckSearchInvalid(String invalidKey) {
 		//Tim search
 				WebElement search=driver.findElement(TXT_SEARCH);
@@ -167,6 +169,24 @@ public class Hompage extends Base{
 	}
 	
 	public void BuyItems() {
+		//Click to Add to cart
+		driver.findElement(BTN_ADDTOCART).click();
+		// to handle all new opened window
+		String MainWindow=driver.getWindowHandle();
+		Set<String> s1=driver.getWindowHandles();
+		Iterator<String> i1=s1.iterator();
+		while (i1.hasNext())
+		{
+			String ChildWindow=i1.next();
+			
+			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
+				//Switching to Child Window
+				driver.switchTo().window(ChildWindow);
+				driver.findElement(By.xpath("//*[@title=\"Continue shopping\"]")).click();
+				
+			}
+		}
+		
+		
 }
->>>>>>> 3ac6d7cdaa5953ae2d3c1ff8994a487899f62939
 }
