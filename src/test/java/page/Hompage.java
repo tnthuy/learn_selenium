@@ -24,6 +24,10 @@ public class Hompage extends Base{
 	public By ITEMPRODUCT=By.xpath("//*[@id=\"center_column\"]/div/div/div[3]/h1");
 	public By MSG_INVALIDSEARCH=By.xpath("//*[@class=\"alert alert-warning\"]");
 	
+	public By ADDTOCART1=By.xpath("//*[@id=\"homefeatured\"]//*[@data-id-product=\"1\"]");
+	public By ADDTOCART2=By.xpath("//*[@id=\"homefeatured\"]//*[@data-id-product=\"2\"]");
+	public By ADDTOCART3=By.xpath("//*[@id=\"homefeatured\"]//*[@data-id-product=\"3\"]");
+	public By BTN_CONTINUESHOPPING=By.xpath("//*[@id=\"layer_cart\"]//*[@title=\"Continue shopping\"]");
 	//Constructor
 	public Hompage(WebDriver driver) {
 		this.driver=driver;
@@ -134,7 +138,7 @@ public class Hompage extends Base{
 		
 
 	}
-<<<<<<< HEAD
+
 	public void AddToCast() {
 		//Tim search
 		WebElement search=driver.findElement(TXT_SEARCH);
@@ -142,7 +146,7 @@ public class Hompage extends Base{
 		//Click to search
 		search.click();
 	}
-=======
+
 	public void CheckSearchInvalid(String invalidKey) {
 		//Tim search
 				WebElement search=driver.findElement(TXT_SEARCH);
@@ -167,6 +171,20 @@ public class Hompage extends Base{
 	}
 	
 	public void BuyItems() {
+		//tim item dau tien va click Add to cart
+		WebElement addToCart1=driver.findElement(ADDTOCART1);
+		addToCart1.click();
+		WebElement continueShopping=driver.findElement(BTN_CONTINUESHOPPING);
+		//continueShopping.click();
+		System.out.println(continueShopping.getText());
+		
+		//tim item thu 2 va click Add to cart
+		WebElement addToCart2=driver.findElement(ADDTOCART2);
+		addToCart2.click();
+		driver.findElement(BTN_CONTINUESHOPPING).click();
+		WebElement addToCart3=driver.findElement(ADDTOCART3);
+		addToCart3.click();
+		
 }
->>>>>>> 3ac6d7cdaa5953ae2d3c1ff8994a487899f62939
+
 }
