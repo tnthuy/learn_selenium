@@ -97,12 +97,6 @@ public class LoginTest {
 		Hompage home=new Hompage(driver);
 		home.CheckSuggestSearch("Dress", "Printed");
 	}
-<<<<<<< HEAD
-	
-	//Buy item
-	//TC 8
-	public void BuyItemSuccess() {
-=======
 
 	//Check search with wrong condition
 	//TC7
@@ -117,8 +111,8 @@ public class LoginTest {
 	//TC8
 	@Test
 	public void BuyItem() {
->>>>>>> 3ac6d7cdaa5953ae2d3c1ff8994a487899f62939
 		Hompage home=new Hompage(driver);
+		home.BuyItems();
 		
 	}
 	@BeforeMethod
