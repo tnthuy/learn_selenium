@@ -113,7 +113,11 @@ public class LoginTest {
 	public void BuyItem() {
 		Hompage home=new Hompage(driver);
 		home.BuyItems();
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> c7acfebe999afd3fd58c6f0bce075f69ad3cb30f
 	}
 	@BeforeMethod
 	public void beforeMethod() {
@@ -128,6 +132,7 @@ public class LoginTest {
 	public void afterMethod() {
 		//driver.close();
 	}
-
+	
+	
 }
 
